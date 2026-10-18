@@ -6,7 +6,7 @@ Volume: I
 Specification Version: 1.0-draft
 Status: Living Specification
 Last Updated: August 7, 2026
-Governing Law: AGENTS Constitution v5.0.1
+Governing Law: WPAI Constitution; accepted canonical source frozen per AGENTS.md
 Conformance: MUST, SHOULD, MAY (RFC 2119)
 ```
 
@@ -33,7 +33,7 @@ Volume I establishes the strategic foundation of the PsyForge platform. It defin
 ## Part I.1 — Vision and Mission
 
 **Status:** Normative (except where explicitly marked Informative)
-**Governing Law:** AGENTS Constitution v5.0.1 (CONST-COMPLETE-001, DOC-WHY-001, RND-DOC-001, IP-INVENTION-001)
+**Governing Law:** [WPAI Constitution](https://github.com/MrWizard94-Compile/Agents-Constitution), frozen per AGENTS.md (CONST-COMPLETE-001, DOC-WHY-001, RND-DOC-001, IP-INVENTION-001)
 **Scope:** This Part defines the vision, mission, problem, solution, and strategic differentiators of the PsyForge v1.0 platform. It is the originating anchor of the entire specification; every requirement, architectural decision, and acceptance criterion in Volumes II–X and the Appendices MUST trace back to a statement made here. See [Appendix G, Section G.1] for the Vision-to-Requirements traceability matrix and [Front Matter, Section FM.0.10.4] for the traceability chain.
 
 ---
@@ -883,7 +883,7 @@ Access to the HPDL MUST be read-only for all roles except the documented princip
 > **Volume:** I — Strategic Foundation
 > **Part:** I.3 — Terminology and Glossary
 > **Specification Status:** Normative
-> **Governing Law:** AGENTS Constitution v5.0.1 (CONST-COMPLETE-001, DOC-SYNC-001, DOC-WHY-001)
+> **Governing Law:** [WPAI Constitution](https://github.com/MrWizard94-Compile/Agents-Constitution), frozen per AGENTS.md (CONST-COMPLETE-001, DOC-SYNC-001, DOC-WHY-001)
 > **Last Updated:** August 7, 2026
 
 This Part establishes the controlled vocabulary for the PsyForge v1.0 specification. Every term used with domain-specific meaning elsewhere in the specification MUST be defined here, or in a normatively referenced appendix, before it may be relied upon for conformance. The glossary is the single source of terminological truth: where a term is used inconsistently in prose elsewhere, the definition in this Part prevails (REQ-GLOS-001).
@@ -1363,7 +1363,7 @@ The maintenance cadence is rolling: there is no fixed release window for glossar
 ## Part I.4 — Behavioral Model
 
 > **Status:** Normative
-> **Governing Law:** AGENTS Constitution v5.0.1
+> **Governing Law:** [WPAI Constitution](https://github.com/MrWizard94-Compile/Agents-Constitution), frozen per AGENTS.md
 > **Scope:** This Part defines the Behavioral Stack — the layered causal model that is the intellectual core of PsyForge. It specifies the seven layers (Interaction, Behavior, Emotion, Motivation, Mechanic, Economy, Outcome), their inputs, outputs, inferences, confidence expectations, ethical bounds, and the cross-layer causal inference machinery that binds them. All downstream volumes — Knowledge Graph (Volume III), Simulation (Volume IV), and Agents (Volume V) — operationalize the model defined here.
 
 ---
@@ -2088,7 +2088,7 @@ Validation results are recorded as *evaluation cards* (see [Volume III, Section 
 
 > **Status:** Normative. The requirements in this Part are binding on every PsyForge deployment, every corpus domain, and every recommendation that flows through the platform. This Part is written to be submittable to a regulatory body as evidence of responsible AI design.
 >
-> **Governing Law:** AGENTS Constitution v5.0.1. See [Volume I, Front Matter, FM.0.6] for conformance level definitions (MUST, SHOULD, MAY).
+> **Governing Law:** [WPAI Constitution](https://github.com/MrWizard94-Compile/Agents-Constitution), frozen per AGENTS.md. See [Volume I, Front Matter, FM.0.6] for conformance level definitions (MUST, SHOULD, MAY).
 >
 > **Cross-References:** [Volume II, Part II.2.6] (Recommendation Gate Architecture), [Volume IV, Part IV.9] (Simulation Ethics), [Volume V, Part V.11] (Ethics Officer Agent), [Volume IX, Part IX.5] (Compliance Framework), [Volume X, Section X.6.3] (Ethics Benchmarks), [Appendix B.9] (Ethics Score Card Schema), [Appendix E.2] (Ethics Decision Record Template).
 
