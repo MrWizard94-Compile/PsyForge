@@ -14,6 +14,8 @@ jobs:
   constitution:
     runs-on: ubuntu-24.04
     steps:
+      - name: Set the initial branch for disposable checkout repositories
+        run: git config --global init.defaultBranch main
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           path: project
@@ -45,6 +47,8 @@ jobs:
         node: ["22", "24"]
     runs-on: ${{ matrix.os }}
     steps:
+      - name: Set the initial branch for disposable checkout repositories
+        run: git config --global init.defaultBranch main
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false

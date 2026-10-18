@@ -77,6 +77,9 @@ independently checks Node 22/24 with npm 11.8.0 on Windows and Linux; a configur
 a passing-run claim. Python 3.11 is used for CI governance checks, not required
 by the product runtime. GitHub Actions are pinned to immutable commits with
 read-only repository permission and checkout credential persistence disabled.
+Disposable CI runners explicitly initialize checkout repositories on `main`;
+this fixes Git's unspecified-default-branch notice without suppressing advice
+or changing any developer workstation's Git configuration.
 
 To reproduce the canonical adoption check, use a separate, verified checkout
 of the exact accepted pin above:
