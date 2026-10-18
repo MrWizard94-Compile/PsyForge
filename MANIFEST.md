@@ -7,6 +7,8 @@
 | `PsyForge_VolumeI.md`–`PsyForge_VolumeX.md` | Normative ten-volume platform specification | Complete against the master TOC |
 | `PsyForge_Appendices.md` | Schemas, traceability, templates, and reference indexes | Complete against the master TOC |
 | `PsyForge_v1_Master_TOC.md` | Canonical navigation and completion matrix | Canonical |
+| `AGENTS.md` / `docs/GOVERNANCE-ADOPTION.md` | Canonical Constitution loader and dated adoption/verification record | Current |
+| `governance_tests/` / `tools/check-source-map-security.mjs` | Positive loader, ignore-boundary, and patched dependency regression checks | Current |
 | `src/` | Local deterministic dashboard plus Local Review client | Implemented; product panels remain sample data |
 | `server/` | Consent-aware loopback service, SQLite store, deterministic features/baseline, and review workflow | Implemented P0–P4 vertical slice only |
 | `docs/LOCAL-SERVICE.md` | Local operation, retention, and API-boundary runbook | Current |
@@ -19,12 +21,18 @@
 ## Verification
 
 ```powershell
-pwsh -NoProfile -File "AGENTS Constitution/tools/verify-pack.ps1" -PackRoot "AGENTS Constitution"
 npm ci
+python -m unittest discover -s governance_tests -v
+node tools/check-source-map-security.mjs
 npm run lint
 npm run test
 npm run build
+npm audit --audit-level=low
 ```
+
+The canonical-source CI job separately validates the accepted source and runs
+its adoption audit. See `docs/GOVERNANCE-ADOPTION.md` to reproduce that pinned
+audit; Python is a governance-development dependency, not a product runtime.
 
 The dashboard has no remote AI provider integration. `npm run build` produces the reviewable static bundle in `dist/`; `npm run start:server` serves it with the local P0–P4 API and creates ignored local operational data under `data/`.
 

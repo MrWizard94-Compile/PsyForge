@@ -9,7 +9,7 @@ This repository contains two complementary artifacts:
 
 ## Start here
 
-1. Read [AGENTS.md](AGENTS.md) and its local constitution pack.
+1. Read [AGENTS.md](AGENTS.md), which loads the canonical [WPAI Constitution](https://github.com/MrWizard94-Compile/Agents-Constitution); see [governance adoption](docs/GOVERNANCE-ADOPTION.md).
 2. Read [DESIGN.md](DESIGN.md) for the implemented dashboard and local-service boundary.
 3. Use [PsyForge_v1_Master_TOC.md](PsyForge_v1_Master_TOC.md) to navigate the specification.
 4. Read [docs/IMPLEMENTATION-PLAN.md](docs/IMPLEMENTATION-PLAN.md) before beginning platform engineering.
