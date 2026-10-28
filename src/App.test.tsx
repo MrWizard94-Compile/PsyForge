@@ -19,6 +19,8 @@ describe('App Component', () => {
     expect(screen.getByText(/Deterministic demo panels/i)).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: 'Local Review' }));
     expect(screen.getByText('Local Recommendation Review')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Evidence Registry' }));
+    expect(screen.getByText('Local Evidence Registry')).toBeInTheDocument();
   });
 
   it('navigates to the simulation demonstration and completes its local state cycle', () => {

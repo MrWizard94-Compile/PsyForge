@@ -16,4 +16,4 @@ The sole P0 purpose is `behavioral_analysis`. It supports aggregate session and 
 
 ## Local operator roles
 
-`operator` may create/revoke consent grants and inspect audit records. `reviewer` may decide recommendations only. `ingestor` may submit validated events only. The initial service has no unauthenticated network listener; API authorization is enforced in the transport adapter and domain services also receive an explicit actor role.
+`operator` may create/revoke consent grants, create bounded local workflow records, and inspect audit records. `reviewer` may decide recommendations only. `ingestor` may submit validated events only. `ethics_reviewer` may veto a pending recommendation only. `evidence_reviewer` may approve/reject a pending evidence source or revoke an approved source only. The loopback transport resolves each session from a unique token in the ignored local credential file; it does not trust caller-supplied actor, tenant, or role headers. This is a local workflow credential boundary, not a multi-user identity provider.

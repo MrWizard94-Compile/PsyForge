@@ -1,15 +1,40 @@
-import {
-  FEATURE_DEFINITION_VERSION,
-  type FeatureValue,
-  type StoredTelemetryEvent,
-} from './types.js';
-
-const WINDOW_MS = 7 * 24 * 60 * 60 * 1000;
+import { FEATURE_DEFINITIONS, selectFeatureEvents, type FeatureDefinition } from './feature-definitions.js';
+import type { FeatureValue, StoredTelemetryEvent } from './types.js';
 
 function sortedIds(events: StoredTelemetryEvent[]): string[] {
   return events.map((event) => event.eventId).sort();
 }
 
+function withinWindow(events: StoredTelemetryEvent[], windowEnd: string, windowDays: number): { windowStart: string; events: StoredTelemetryEvent[] } {
+  const end = Date.parse(windowEnd);
+  const windowStart = new Date(end - windowDays * 24 * 60 * 60 * 1000).toISOString();
+  return {
+    windowStart,
+    events: events.filter((event) => Date.parse(event.occurredAt) >= Date.parse(windowStart) && Date.parse(event.occurredAt) <= end),
+  };
+}
+
+function aggregateFeature(definition: FeatureDefinition, events: StoredTelemetryEvent[]): { value: number; sourceEvents: StoredTelemetryEvent[] } {
+  const sourceEvents = selectFeatureEvents(events, definition.source);
+  switch (definition.aggregation.kind) {
+    case 'count':
+      return { value: sourceEvents.length, sourceEvents };
+    case 'distinct_occurrence_day':
+      return { value: new Set(sourceEvents.map((event) => event.occurredAt.slice(0, 10))).size, sourceEvents };
+    case 'mean_session_duration_seconds': {
+      const sessionEvents = sourceEvents.filter((event): event is Extract<StoredTelemetryEvent, { eventType: 'session.ended' }> => event.eventType === 'session.ended');
+      const totalDuration = sessionEvents.reduce((total, event) => total + event.payload.durationSeconds, 0);
+      return { value: sessionEvents.length === 0 ? 0 : totalDuration / sessionEvents.length, sourceEvents: sessionEvents };
+    }
+    case 'ratio': {
+      const numerator = selectFeatureEvents(events, definition.aggregation.numerator);
+      const denominator = selectFeatureEvents(events, definition.aggregation.denominator);
+      return { value: denominator.length === 0 ? 0 : numerator.length / denominator.length, sourceEvents: denominator };
+    }
+  }
+}
+
+/** Interprets the versioned P2 feature language over a bounded event window. */
 export function computeFeatures(
   tenantId: string,
   subjectId: string,
@@ -17,27 +42,21 @@ export function computeFeatures(
   windowEnd: string,
   computedAt: string,
 ): FeatureValue[] {
-  const end = Date.parse(windowEnd);
-  const start = new Date(end - WINDOW_MS).toISOString();
-  const windowEvents = events.filter((event) => Date.parse(event.occurredAt) >= Date.parse(start) && Date.parse(event.occurredAt) <= end);
-  const sessionEvents = windowEvents.filter((event): event is Extract<StoredTelemetryEvent, { eventType: 'session.ended' }> => event.eventType === 'session.ended');
-  const activityEvents = windowEvents.filter((event): event is Extract<StoredTelemetryEvent, { eventType: 'activity.completed' }> => event.eventType === 'activity.completed');
-  const activeDays = new Set(windowEvents.map((event) => event.occurredAt.slice(0, 10))).size;
-  const totalDuration = sessionEvents.reduce((total, event) => total + event.payload.durationSeconds, 0);
-  const explorationCount = activityEvents.filter((event) => event.payload.activityType === 'exploration').length;
-  const common = {
-    tenantId,
-    subjectId,
-    windowStart: start,
-    windowEnd,
-    epistemicTier: 'observed' as const,
-    definitionVersion: FEATURE_DEFINITION_VERSION,
-    computedAt,
-  };
-  return [
-    { ...common, featureKey: 'session_count_7d' as const, value: sessionEvents.length, unit: 'count' as const, sourceEventIds: sortedIds(sessionEvents) },
-    { ...common, featureKey: 'active_day_count_7d' as const, value: activeDays, unit: 'days' as const, sourceEventIds: sortedIds(windowEvents) },
-    { ...common, featureKey: 'average_session_duration_seconds_7d' as const, value: sessionEvents.length === 0 ? 0 : totalDuration / sessionEvents.length, unit: 'seconds' as const, sourceEventIds: sortedIds(sessionEvents) },
-    { ...common, featureKey: 'exploration_activity_ratio_7d' as const, value: activityEvents.length === 0 ? 0 : explorationCount / activityEvents.length, unit: 'ratio' as const, sourceEventIds: sortedIds(activityEvents) },
-  ];
+  return FEATURE_DEFINITIONS.map((definition) => {
+    const window = withinWindow(events, windowEnd, definition.windowDays);
+    const aggregate = aggregateFeature(definition, window.events);
+    return {
+      featureKey: definition.featureKey,
+      tenantId,
+      subjectId,
+      windowStart: window.windowStart,
+      windowEnd,
+      value: aggregate.value,
+      unit: definition.unit,
+      epistemicTier: definition.epistemicTier,
+      sourceEventIds: sortedIds(aggregate.sourceEvents),
+      definitionVersion: definition.definitionVersion,
+      computedAt,
+    };
+  });
 }

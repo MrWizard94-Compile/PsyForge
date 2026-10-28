@@ -1,6 +1,6 @@
 # PsyForge v1.0 — Volume II: System Architecture
 
-*Part of the PsyForge Master Specification. See [PsyForge_v1_Master_TOC.md](PsyForge_v1_Master_TOC.md) for the full document map and [PsyForge_VolumeI_Complete.md](PsyForge_VolumeI_Complete.md) for Volume I (Strategic Foundation).*
+*Part of the PsyForge Master Specification. See [PsyForge_v1_Master_TOC.md](PsyForge_v1_Master_TOC.md) for the full document map and [PsyForge_VolumeI.md](PsyForge_VolumeI.md) for Volume I (Strategic Foundation).*
 
 *Document Status: Living Specification — Volume II complete (Parts II.1–II.8).*
 

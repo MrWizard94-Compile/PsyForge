@@ -1,38 +1,45 @@
-# Next-Part Plan: P5 Evidence Registry and Corpus Intake Gate
+# P6 Typed Knowledge-Graph Kernel
 
-## Why this is next
+## Decision record
 
-P0–P4 proves a consented local data path, but the next architectural dependency is not an agent or a high-scale simulation. Volumes III–V require a trustworthy, source-linked knowledge substrate first. P5 will establish the governance and provenance boundary needed before any corpus or graph claim is made.
+Implemented on 2026-08-21 with director approval. P6 is a deterministic, local, typed structural graph kernel; it is not corpus ingestion, embedding, retrieval, agent, model, simulation, or recommendation capability.
 
-## Proposed outcome
+| Director-controlled decision | Approved P6 boundary |
+|---|---|
+| Vocabulary | `Corpus Concept → Belongs_To → Domain Entity` only (`corpus_concept`, `belongs_to`, `domain_entity`). |
+| Assertion authority | Credential-bound `operator` only; the assertion must be `observed`, structural, and synthetic. |
+| Rights revocation | The revocation transaction writes immutable invalidations for every active assertion using the source; assertions remain inspectable but inactive and excluded from export. |
+| Real-source admission | None. P6 requires an approved `synthetic_test` source with `synthetic` rights basis. A real corpus needs a separate source policy, encryption-at-rest plan, and director approval. |
 
-Implement a local, append-only evidence registry that records a source's identifier, owner, license/permission basis, content hash, acquisition date, domain, review status, and human approver. It will register metadata and a small, licensed synthetic test corpus only; it will not crawl the web, ingest copyrighted research, embed content, call an LLM, or create agent access.
+## Implemented contract
 
-## Dependency order
+```text
+approved synthetic P5 metadata/hash
+  → exact structural assertion request
+  → closed node/edge validation + tenant checks
+  → immutable nodes, assertion, and audit facts
+  → rights revocation invalidates downstream assertions transactionally
+  → read-only provenance inspector / deterministic fixture export
+```
 
-1. Write an ADR that chooses the local source-manifest format, hashing algorithm, review roles, and retention boundary.
-2. Define a strict source-record schema plus a license/permission allow-list and an explicit rejection/quarantine record.
-3. Add a tenant-independent evidence-registry store and immutable audit events, without coupling it to player telemetry.
-4. Add a reproducible import command that accepts only a reviewed local fixture directory, records hashes before parsing, and rejects unsafe paths, duplicate versions, missing attribution, unsupported license, or changed content.
-5. Add an operator UI for source inspection and review; no free-form content search or model summary is in scope.
-6. Publish a provenance/export record and a deletion/revocation policy that treats source rights separately from player-consent revocation.
+P6 stores source ID/version/hash, source review state, assertion author and role, correlation ID, creation timestamp, explicit observed tier, and immutable invalidation state. It never stores or returns source text. Graph fixture import is limited to a regular local JSON file of at most 64 KiB and 128 assertions, and its batch is all-or-nothing. Export is deterministic, bounded, active-only, and refuses to overwrite a file.
 
-## Non-negotiable gates
+## Non-negotiable enforced exclusions
 
-- Every registered source must be traceable to a human-readable rights basis and exact content hash.
-- Imports must be local, bounded, deterministic, idempotent, and fail closed.
-- No source text may be sent to a provider, hosted API, or LLM. Docker-hosted Ollama remains a future, separately approved option only.
-- Tests must prove path traversal rejection, duplicate handling, hash mismatch detection, license denial, audit immutability, and restart-safe persistence.
-- A source review must be human-authorized. An agent may not approve, retrieve, or publish a source.
-- No graph, embedding, persona, simulation, prediction, or recommendation action may be built on an unapproved source.
+- No causal relationship, inference, embedding, retrieval, LLM/provider call, persona, model input, simulation input, or recommendation is implemented or exposed.
+- Unknown fields, unknown graph types, non-synthetic sources, pending/rejected/revoked sources, cross-tenant references, duplicate assertions, and changed node provenance fail closed.
+- Graph nodes, assertions, invalidations, evidence reviews/revocations, and audits are immutable in SQLite.
 
-## Acceptance evidence
+## Verification
 
-P5 is ready for the first graph-schema slice only when a clean install, lint, tests, build, dependency audit, and local artifact run pass; a reviewer can reconstruct one fixture source's rights, hash, import outcome, and audit history; and the documentation lists all intentionally unsupported source types.
+Run the normal quality gates plus a real synthetic fixture operation:
 
-## Decisions requiring director approval before implementation
+```powershell
+npm run lint
+npm run test
+npm run build
+npm run graph:fixture -- --mode import --data-dir .\data --tenant-id studio-alpha --fixture .\fixture.json
+npm run graph:fixture -- --mode export --data-dir .\data --tenant-id studio-alpha --fixture .\graph-export.json
+```
 
-1. The first allowed corpus source and its written license/permission basis.
-2. Whether a source's full local text may be retained, or only its metadata/hash, at P5.
-3. The human role authorized to approve source rights for WPAI.
-4. The local backup and encryption-at-rest policy for the expanded evidence store.
+The full design, rationale, and residual boundary are in [ADR-009](foundations/ADR-009-SYNTHETIC-GRAPH-KERNEL.md).

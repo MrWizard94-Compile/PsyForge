@@ -16,6 +16,11 @@
     "test": "vitest run --maxWorkers=1",
     "preview": "vite preview",
     "start:server": "node dist-server/index.js",
+    "import:evidence": "npm run build:server && node dist-server/import-evidence.js",
+    "graph:fixture": "npm run build:server && node dist-server/graph/fixture-cli.js",
+    "docs:traceability": "node scripts/generate-traceability.mjs",
+    "benchmark:local": "npm run build:server && node dist-server/benchmark-local.js",
+    "recompute:features": "npm run build:server && node dist-server/recompute-features.js",
     "typecheck": "tsc --noEmit",
     "lint": "npm run typecheck"
   },

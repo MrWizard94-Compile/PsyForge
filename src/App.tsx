@@ -9,6 +9,7 @@ import {
   Server,
   Code2,
   ClipboardCheck,
+  BookOpenCheck,
 } from 'lucide-react';
 import OverviewView from './views/OverviewView';
 import PsychologyCorpusView from './views/PsychologyCorpusView';
@@ -19,9 +20,10 @@ import AIDesignAgentsView from './views/AIDesignAgentsView';
 import GameBackendView from './views/GameBackendView';
 import PlatformSaaSView from './views/PlatformSaaSView';
 import LocalReviewView from './views/LocalReviewView';
+import EvidenceRegistryView from './views/EvidenceRegistryView';
 import { useBackendStatus } from './hooks/useBackendStatus';
 
-type ViewState = 'overview' | 'psychology' | 'knowledge' | 'players' | 'simulation' | 'agents' | 'backend' | 'saas' | 'review';
+type ViewState = 'overview' | 'psychology' | 'knowledge' | 'players' | 'simulation' | 'agents' | 'backend' | 'saas' | 'review' | 'evidence';
 
 export default function App() {
   const [currentView, setCurrentView] = useState<ViewState>('overview');
@@ -47,6 +49,8 @@ export default function App() {
         return <PlatformSaaSView />;
       case 'review':
         return <LocalReviewView />;
+      case 'evidence':
+        return <EvidenceRegistryView />;
       default:
         return <OverviewView />;
     }
@@ -101,6 +105,7 @@ export default function App() {
           <NavItem icon={<Gamepad2 />} label="Game Backend" active={currentView === 'backend'} onClick={() => setCurrentView('backend')} />
           <NavItem icon={<Server />} label="Platform SaaS" active={currentView === 'saas'} onClick={() => setCurrentView('saas')} />
           <NavItem icon={<ClipboardCheck />} label="Local Review" active={currentView === 'review'} onClick={() => setCurrentView('review')} />
+          <NavItem icon={<BookOpenCheck />} label="Evidence Registry" active={currentView === 'evidence'} onClick={() => setCurrentView('evidence')} />
         </nav>
 
         <div className="mt-auto p-4 rounded-2xl bg-gradient-to-b from-white/5 to-transparent border border-white/10">

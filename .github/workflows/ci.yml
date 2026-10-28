@@ -1,0 +1,83 @@
+name: PsyForge CI
+
+permissions:
+  contents: read
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  constitution:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Set the initial branch for disposable checkout repositories
+        run: git config --global init.defaultBranch main
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          path: project
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: MrWizard94-Compile/Agents-Constitution
+          ref: 89f8771df5a6fa8627cb9576afca1eefd0486d27
+          path: constitution
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.11"
+      - name: Validate accepted canonical source
+        working-directory: constitution
+        run: |
+          python tools/validate-source.py
+          python -m unittest discover -s tests -v
+      - name: Audit project adoption and positive entry contracts
+        run: |
+          python constitution/tools/check-adoption.py project
+          python -m unittest discover -s project/governance_tests -v
+
+  product:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, windows-2025]
+        node: ["22", "24"]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Set the initial branch for disposable checkout repositories
+        run: git config --global init.defaultBranch main
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - name: Use the declared npm toolchain
+        run: npm install --global npm@11.8.0 --no-fund
+      - name: Record runtime and package-manager versions
+        run: |
+          node --version
+          npm --version
+      - run: npm ci --no-fund
+      - run: node tools/check-source-map-security.mjs
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build
+      - run: npm audit --audit-level=low
+
+  ci-ok:
+    if: always()
+    needs: [constitution, product]
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Require canonical governance and every product cohort
+        env:
+          CONSTITUTION_RESULT: ${{ needs.constitution.result }}
+          PRODUCT_RESULT: ${{ needs.product.result }}
+        run: |
+          test "$CONSTITUTION_RESULT" = success
+          test "$PRODUCT_RESULT" = success

@@ -1,6 +1,7 @@
 import { randomBytes } from 'node:crypto';
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
+import { createInitialLocalActorCredentials, parseLocalActorCredentialsFile, serializeLocalActorCredentialsFile } from './auth/local-credentials.js';
 import { PsyForgeService } from './application/psyforge-service.js';
 import { PsyForgeRepository } from './persistence/repository.js';
 import { createPsyForgeHttpServer } from './transport/http-server.js';
@@ -18,30 +19,24 @@ function parsePort(value: string | undefined): number {
   return port;
 }
 
-function localToken(dataDirectory: string): string {
-  const provided = process.env.PSYFORGE_LOCAL_TOKEN;
-  if (provided !== undefined) {
-    if (!/^[a-f0-9]{64}$/i.test(provided)) {
-      throw new Error('PSYFORGE_LOCAL_TOKEN must be a 64-character hexadecimal token.');
-    }
-    return provided;
+/**
+ * Creates one private token per fixed local workflow identity on first launch.
+ * The file is intentionally never printed, served, or committed. Possession of
+ * an individual token fixes the actor, tenant, and role for the session.
+ */
+function localActorCredentials(dataDirectory: string) {
+  const credentialPath = resolve(dataDirectory, '.psyforge-local-actors.json');
+  if (existsSync(credentialPath)) {
+    return parseLocalActorCredentialsFile(readFileSync(credentialPath, 'utf8'));
   }
-  const tokenPath = resolve(dataDirectory, '.psyforge-local-token');
-  if (existsSync(tokenPath)) {
-    const token = readFileSync(tokenPath, 'utf8').trim();
-    if (/^[a-f0-9]{64}$/i.test(token)) {
-      return token;
-    }
-    throw new Error(`The local token file at ${tokenPath} is invalid. Replace it with a 64-character hexadecimal token.`);
-  }
-  const token = randomBytes(32).toString('hex');
-  writeFileSync(tokenPath, `${token}\n`, { encoding: 'utf8', mode: 0o600, flag: 'wx' });
-  return token;
+  const credentials = createInitialLocalActorCredentials(() => randomBytes(32).toString('hex'));
+  writeFileSync(credentialPath, serializeLocalActorCredentialsFile(credentials), { encoding: 'utf8', mode: 0o600, flag: 'wx' });
+  return credentials;
 }
 
 const dataDirectory = resolve(process.env.PSYFORGE_DATA_DIR ?? './data');
 const repository = new PsyForgeRepository(resolve(dataDirectory, 'psyforge.sqlite'));
-const server = createPsyForgeHttpServer({ service: new PsyForgeService(repository), localToken: localToken(dataDirectory), staticDirectory: resolve('./dist') });
+const server = createPsyForgeHttpServer({ service: new PsyForgeService(repository), actorCredentials: localActorCredentials(dataDirectory), staticDirectory: resolve('./dist') });
 const port = parsePort(process.env.PSYFORGE_PORT);
 
 server.listen(port, '127.0.0.1', () => {
@@ -51,7 +46,7 @@ server.listen(port, '127.0.0.1', () => {
 function stop(signal: string): void {
   server.close(() => {
     repository.close();
-    process.stdout.write(`PsyForge local service stopped after ${signal}.\n`);
+    process.stdout.write(`PsyForge local service stopped after ${signal}\n`);
   });
 }
 

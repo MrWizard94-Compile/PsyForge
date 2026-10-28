@@ -1,17 +1,18 @@
 import { createServer, type IncomingMessage, type Server, type ServerResponse } from 'node:http';
-import { randomUUID } from 'node:crypto';
+import { randomUUID, timingSafeEqual } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
 import { extname, resolve, sep } from 'node:path';
-import { DomainError, type Actor, type ActorRole, type ReviewDecision } from '../domain/types.js';
+import { DomainError, type Actor, type ReviewDecision } from '../domain/types.js';
+import { normalizeIso8601Timestamp } from '../domain/timestamps.js';
 import { PsyForgeService } from '../application/psyforge-service.js';
+import { LOCAL_CREDENTIAL_TOKEN_PATTERN, type LocalActorCredential, validateLocalActorCredentials } from '../auth/local-credentials.js';
 
 const MAX_BODY_BYTES = 64 * 1024;
-const ROLES = new Set<ActorRole>(['operator', 'ingestor', 'reviewer', 'ethics_reviewer']);
 const IDENTIFIER_PATTERN = /^[a-zA-Z0-9][a-zA-Z0-9._:-]{0,127}$/;
 
 export interface HttpServerOptions {
   service: PsyForgeService;
-  localToken: string;
+  actorCredentials: readonly LocalActorCredential[];
   staticDirectory?: string;
 }
 
@@ -33,17 +34,18 @@ function readCookie(request: IncomingMessage, name: string): string | undefined 
   return cookie.split(';').map((part) => part.trim()).find((part) => part.startsWith(`${name}=`))?.slice(name.length + 1);
 }
 
-function actorFromTokenHeaders(request: IncomingMessage, token: string): Actor {
-  if (request.headers['x-psyforge-api-token'] !== token) {
-    throw new DomainError('UNAUTHENTICATED', 'A valid local API token is required.', 401);
+/** Resolves only a configured token; request headers cannot select or elevate a role. */
+function actorFromCredentialHeader(request: IncomingMessage, credentials: readonly LocalActorCredential[]): Actor {
+  const presentedToken = request.headers['x-psyforge-api-token'];
+  if (typeof presentedToken !== 'string' || !LOCAL_CREDENTIAL_TOKEN_PATTERN.test(presentedToken)) {
+    throw new DomainError('UNAUTHENTICATED', 'A valid local actor token is required.', 401);
   }
-  const id = request.headers['x-psyforge-actor-id'];
-  const role = request.headers['x-psyforge-role'];
-  const tenantId = request.headers['x-psyforge-tenant-id'];
-  if (typeof id !== 'string' || typeof role !== 'string' || typeof tenantId !== 'string' || !IDENTIFIER_PATTERN.test(id) || !IDENTIFIER_PATTERN.test(tenantId) || !ROLES.has(role as ActorRole)) {
-    throw new DomainError('UNAUTHENTICATED', 'Actor headers are incomplete or invalid.', 401);
+  const presentedBuffer = Buffer.from(presentedToken, 'utf8');
+  const credential = credentials.find((candidate) => timingSafeEqual(Buffer.from(candidate.token, 'utf8'), presentedBuffer));
+  if (credential === undefined) {
+    throw new DomainError('UNAUTHENTICATED', 'A valid local actor token is required.', 401);
   }
-  return { id, role: role as ActorRole, tenantId };
+  return credential.actor;
 }
 
 function exactRecord(input: unknown, keys: readonly string[], description: string): Record<string, unknown> {
@@ -62,13 +64,16 @@ function exactRecord(input: unknown, keys: readonly string[], description: strin
 function subjectCommand(input: unknown): { subjectId: string; windowEnd?: string } {
   const hasWindowEnd = typeof input === 'object' && input !== null && !Array.isArray(input) && Object.prototype.hasOwnProperty.call(input, 'windowEnd');
   const record = exactRecord(input, hasWindowEnd ? ['subjectId', 'windowEnd'] : ['subjectId'], 'command body');
-  if (typeof record.subjectId !== 'string' || !IDENTIFIER_PATTERN.test(record.subjectId) || (record.windowEnd !== undefined && (typeof record.windowEnd !== 'string' || Number.isNaN(Date.parse(record.windowEnd))))) {
-    throw new DomainError('VALIDATION_FAILED', 'subjectId and optional windowEnd are required in the expected format.', 400);
+  if (typeof record.subjectId !== 'string' || !IDENTIFIER_PATTERN.test(record.subjectId)) {
+    throw new DomainError('VALIDATION_FAILED', 'subjectId must be a 1–128 character opaque identifier.', 400);
   }
-  return { subjectId: record.subjectId, windowEnd: record.windowEnd === undefined ? undefined : new Date(record.windowEnd).toISOString() };
+  return {
+    subjectId: record.subjectId,
+    windowEnd: record.windowEnd === undefined ? undefined : normalizeIso8601Timestamp(record.windowEnd, 'windowEnd'),
+  };
 }
 
-function actorFromRequest(request: IncomingMessage, token: string, sessions: Map<string, { actor: Actor; expiresAt: number }>): Actor {
+function actorFromRequest(request: IncomingMessage, credentials: readonly LocalActorCredential[], sessions: Map<string, { actor: Actor; expiresAt: number }>): Actor {
   const sessionId = readCookie(request, SESSION_COOKIE);
   const session = sessionId === undefined ? undefined : sessions.get(sessionId);
   if (session !== undefined && session.expiresAt > Date.now()) {
@@ -77,7 +82,7 @@ function actorFromRequest(request: IncomingMessage, token: string, sessions: Map
   if (sessionId !== undefined) {
     sessions.delete(sessionId);
   }
-  return actorFromTokenHeaders(request, token);
+  return actorFromCredentialHeader(request, credentials);
 }
 
 async function parseJsonBody(request: IncomingMessage): Promise<unknown> {
@@ -101,6 +106,16 @@ async function parseJsonBody(request: IncomingMessage): Promise<unknown> {
   }
 }
 
+function matchEvidenceSourceReview(pathname: string): string | undefined {
+  const match = /^\/v1\/evidence\/sources\/([0-9a-f-]{36})\/reviews$/i.exec(pathname);
+  return match?.[1];
+}
+
+function matchEvidenceSourceRevocation(pathname: string): string | undefined {
+  const match = /^\/v1\/evidence\/sources\/([0-9a-f-]{36})\/revoke$/i.exec(pathname);
+  return match?.[1];
+}
+
 function matchRecommendationDecision(pathname: string): string | undefined {
   const match = /^\/v1\/recommendations\/([0-9a-f-]{36})\/decisions$/i.exec(pathname);
   return match?.[1];
@@ -112,6 +127,8 @@ function matchRecommendation(pathname: string): string | undefined {
 }
 
 export function createPsyForgeHttpServer(options: HttpServerOptions): Server {
+  validateLocalActorCredentials(options.actorCredentials);
+  const credentials = [...options.actorCredentials];
   const sessions = new Map<string, { actor: Actor; expiresAt: number }>();
   const staticDirectory = options.staticDirectory === undefined ? undefined : resolve(options.staticDirectory);
   return createServer(async (request, response) => {
@@ -128,7 +145,7 @@ export function createPsyForgeHttpServer(options: HttpServerOptions): Server {
         return;
       }
       if (method === 'POST' && pathname === '/v1/session') {
-        const actor = actorFromTokenHeaders(request, options.localToken);
+        const actor = actorFromCredentialHeader(request, credentials);
         const sessionId = randomUUID();
         sessions.set(sessionId, { actor, expiresAt: Date.now() + 28_800_000 });
         sendJson(response, 201, { session: 'created', actor: { id: actor.id, role: actor.role, tenantId: actor.tenantId } }, correlationId, { 'set-cookie': `${SESSION_COOKIE}=${sessionId}; HttpOnly; SameSite=Strict; Path=/; Max-Age=28800` });
@@ -142,7 +159,7 @@ export function createPsyForgeHttpServer(options: HttpServerOptions): Server {
         sendJson(response, 204, undefined, correlationId, { 'set-cookie': `${SESSION_COOKIE}=; HttpOnly; SameSite=Strict; Path=/; Max-Age=0` });
         return;
       }
-      const actor = actorFromRequest(request, options.localToken, sessions);
+      const actor = actorFromRequest(request, credentials, sessions);
       if (method === 'POST' && pathname === '/v1/consents') {
         sendJson(response, 201, { consent: options.service.grantConsent(actor, await parseJsonBody(request)) }, correlationId);
         return;
@@ -167,6 +184,39 @@ export function createPsyForgeHttpServer(options: HttpServerOptions): Server {
       if (method === 'POST' && pathname === '/v1/models/baseline') {
         const body = subjectCommand(await parseJsonBody(request));
         sendJson(response, 201, { model: options.service.buildBaselineModel(actor, body.subjectId, body.windowEnd) }, correlationId);
+        return;
+      }
+      if (method === 'POST' && pathname === '/v1/graph/assertions') {
+        sendJson(response, 201, { assertion: options.service.createGraphAssertion(actor, await parseJsonBody(request)) }, correlationId);
+        return;
+      }
+      if (method === 'GET' && pathname === '/v1/graph/assertions') {
+        sendJson(response, 200, { assertions: options.service.listGraphAssertions(actor) }, correlationId);
+        return;
+      }      if (method === 'POST' && pathname === '/v1/evidence/sources') {
+        sendJson(response, 201, { source: options.service.registerEvidenceSource(actor, await parseJsonBody(request)) }, correlationId);
+        return;
+      }
+      if (method === 'GET' && pathname === '/v1/evidence/sources') {
+        sendJson(response, 200, { sources: options.service.listEvidenceSources(actor) }, correlationId);
+        return;
+      }
+      const evidenceSourceRevocationId = matchEvidenceSourceRevocation(pathname);
+      if (method === 'POST' && evidenceSourceRevocationId !== undefined) {
+        const body = exactRecord(await parseJsonBody(request), ['rationale'], 'evidence revocation body');
+        if (typeof body.rationale !== 'string') {
+          throw new DomainError('VALIDATION_FAILED', 'Evidence revocation requires a rationale.', 400);
+        }
+        sendJson(response, 200, { source: options.service.revokeEvidenceSource(actor, evidenceSourceRevocationId, body.rationale) }, correlationId);
+        return;
+      }
+      const evidenceSourceId = matchEvidenceSourceReview(pathname);
+      if (method === 'POST' && evidenceSourceId !== undefined) {
+        const body = exactRecord(await parseJsonBody(request), ['decision', 'rationale'], 'evidence review body');
+        if ((body.decision !== 'approved' && body.decision !== 'rejected') || typeof body.rationale !== 'string') {
+          throw new DomainError('VALIDATION_FAILED', 'Evidence review requires an approved/rejected decision and rationale.', 400);
+        }
+        sendJson(response, 200, { source: options.service.reviewEvidenceSource(actor, evidenceSourceId, body.decision, body.rationale) }, correlationId);
         return;
       }
       if (method === 'POST' && pathname === '/v1/recommendations') {

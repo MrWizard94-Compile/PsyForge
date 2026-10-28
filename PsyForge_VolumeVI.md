@@ -1,6 +1,6 @@
 # PsyForge v1.0 — Volume VI: Telemetry, SDK, and Data Integration
 
-*Part of the PsyForge Master Specification. See [PsyForge_v1_Master_TOC.md](PsyForge_v1_Master_TOC.md) for the full document map, [PsyForge_VolumeI_Complete.md](PsyForge_VolumeI_Complete.md) for Volume I, [PsyForge_VolumeII.md](PsyForge_VolumeII.md) for Volume II, [PsyForge_VolumeIII.md](PsyForge_VolumeIII.md) for Volume III, [PsyForge_VolumeIV.md](PsyForge_VolumeIV.md) for Volume IV, and [PsyForge_VolumeV.md](PsyForge_VolumeV.md) for Volume V.*
+*Part of the PsyForge Master Specification. See [PsyForge_v1_Master_TOC.md](PsyForge_v1_Master_TOC.md) for the full document map, [PsyForge_VolumeI.md](PsyForge_VolumeI.md) for Volume I, [PsyForge_VolumeII.md](PsyForge_VolumeII.md) for Volume II, [PsyForge_VolumeIII.md](PsyForge_VolumeIII.md) for Volume III, [PsyForge_VolumeIV.md](PsyForge_VolumeIV.md) for Volume IV, and [PsyForge_VolumeV.md](PsyForge_VolumeV.md) for Volume V.*
 
 *Document Status: Living Specification — Volume VI complete (Parts VI.1–VI.5).*
 

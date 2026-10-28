@@ -1,0 +1,3572 @@
+{
+  "schemaVersion": "1.0",
+  "purpose": "Machine-readable traceability ledger. Normative requirement statuses remain planned until their complete owning increment is verified.",
+  "sourceDocuments": [
+    "PsyForge_VolumeI.md",
+    "PsyForge_VolumeII.md",
+    "PsyForge_VolumeIII.md",
+    "PsyForge_VolumeIV.md",
+    "PsyForge_VolumeV.md",
+    "PsyForge_VolumeVI.md",
+    "PsyForge_VolumeVII.md",
+    "PsyForge_VolumeVIII.md",
+    "PsyForge_VolumeIX.md",
+    "PsyForge_VolumeX.md",
+    "PsyForge_Appendices.md"
+  ],
+  "requirements": [
+    {
+      "id": "REQ-AC-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ACCESS-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ACCESS-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-AGENT-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-AGENT-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-AGENT-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-AGENT-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-AGENT-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-AGENT-006",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-AGENT-007",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-AGENT-008",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-AGENT-009",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-AGENT-010",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-AGENT-011",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-AGENT-012",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-AGENT-013",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-AGT-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-AGT-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-AGT-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-AIEVAL-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-AIRGAP-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-API-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-API-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-API-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-API-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-API-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-API-006",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-API-007",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-API-008",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-API-009",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ARCH-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ARCH-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ARCH-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ARCH-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ARCH-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ARCH-006",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ARCH-007",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ARCH-008",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ARCH-009",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ARCH-010",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ARCH-011",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ARCH-012",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ARCH-013",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ARCH-014",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ARCH-015",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ARCH-016",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ARCH-017",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ARCH-018",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ARCH-019",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ARCH-020",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ARCH-021",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ARCH-022",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ARCH-023",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ARCH-024",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ARCH-025",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ARCH-026",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ARCH-027",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ARCH-028",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ARCH-029",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ARCH-030",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ARCH-031",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ARCH-032",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ARCH-033",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ARCH-034",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ARCH-035",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ARCH-036",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ARCH-037",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ARCH-038",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-AUDIT-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-006",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-007",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-008",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-009",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-010",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-011",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-012",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-013",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-014",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-015",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-016",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-017",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-018",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-019",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-020",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-021",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-022",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-023",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-024",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-025",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-026",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-027",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-028",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-029",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-030",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-031",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-032",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-033",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-034",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-035",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-036",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-037",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-038",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-039",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-040",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-041",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-042",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-043",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-044",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-045",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-046",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-047",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-048",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-049",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-050",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-051",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-052",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-053",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-054",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-055",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-056",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-057",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-058",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-059",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-060",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-061",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-062",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-063",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-064",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-065",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-066",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-067",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-068",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-069",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-070",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-071",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-072",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-073",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-074",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-075",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-076",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-077",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-078",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-079",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-080",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-081",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-082",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-083",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-084",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-085",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-086",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-087",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-088",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-089",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEH-090",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEHECON-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BEHECON-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BIZ-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BIZ-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-BIZ-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-CAUS-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-COMP-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-COMP-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-CORP-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-CORP-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-CORPUS-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-CORPUS-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-CORPUS-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-CORPUS-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-CORPUS-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-CORPUS-006",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-CORPUS-007",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-CORPUS-008",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-CORPUS-009",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-CORPUS-010",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-CORPUS-011",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-CORPUS-012",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-CRO-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-CRO-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-CRYPT-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-CRYPT-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-DASH-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-DASH-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-DASH-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-DASH-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-DASH-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-DEPLOY-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-DEPLOY-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-DEPLOY-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-DEPLOY-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-DEPLOY-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-DEPLOY-006",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-DEPLOY-007",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-DEPLOY-008",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-DEPLOY-009",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-DEPLOY-010",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-DEPLOY-011",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-DEPLOY-012",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-DEPLOY-013",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-DEPLOY-014",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ECON-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ECON-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ECON-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ECONDESIGN-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ECONDESIGN-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-EMB-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-EMBED-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-EMBED-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-EMBED-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-EMBED-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-EMBED-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-006",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-007",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-008",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-009",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-010",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-011",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-012",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-013",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-014",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-015",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-016",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-017",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-018",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-019",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-020",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-021",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-022",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-023",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-024",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-025",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-026",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-027",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-028",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-029",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-030",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-031",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-032",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-033",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-034",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-035",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-036",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-037",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-038",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-039",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-040",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-041",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-042",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-043",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-044",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-045",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-046",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-047",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-048",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-049",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-050",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-051",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-052",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-053",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-054",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-055",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-056",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-057",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-058",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-059",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-060",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-061",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-062",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-063",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-064",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-065",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-066",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-067",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-068",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-069",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-070",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-071",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-072",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-073",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-074",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-075",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-076",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-077",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-078",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-079",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-080",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-081",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-082",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-083",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-084",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-085",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-086",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-087",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-088",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-089",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-090",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-091",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-092",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-093",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-094",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-095",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-096",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-097",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-098",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-099",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-100",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-101",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-102",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-103",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-104",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETH-105",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETHICSAGENT-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETHICSAGENT-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETHICSAGENT-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETHICSAGENT-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ETHICSAGENT-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-EVAL-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-EVAL-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-EXP-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-EXP-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-EXP-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-EXP-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-EXP-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-EXP-006",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-EXP-007",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-EXP-008",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-EXP-009",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-EXPPLAN-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-EXPPLAN-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-EXPPLAN-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-EXTEND-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-EXTEND-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-EXTEND-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-EXTEND-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-EXTEND-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FEAT-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FEAT-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FEAT-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FEAT-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FEAT-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FEAT-006",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FEAT-007",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FEAT-008",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FEAT-009",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FEAT-010",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FEAT-011",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FEAT-012",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FLOW-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FLOW-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FLOW-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FLOW-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FLOW-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FLOW-006",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FLOW-007",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FLOW-008",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FLOW-009",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FLOW-010",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FLOW-011",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FLOW-012",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FLOW-013",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FLOW-014",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FLOW-015",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FLOW-016",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FLOW-017",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FLOW-018",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FLOW-019",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FLOW-020",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FLOW-021",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FLOW-022",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FLOW-023",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FLOW-024",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FLOW-025",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FLOW-026",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FLOW-027",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FLOW-028",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FLOW-029",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FLOW-030",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FLOW-031",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FLOW-032",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FLOW-033",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FORECAST-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FORECAST-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FORECAST-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FORECAST-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FORECAST-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-FORECAST-006",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-GAMEDESIGN-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-GAMEDESIGN-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-GLOS-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-GLOS-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-GLOS-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-GLOS-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-GLOS-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-GLOS-006",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-GLOS-007",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-GRAPH-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-GRAPH-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-GRAPH-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-GRAPH-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-GRAPH-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-GRAPH-006",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-GRAPH-007",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-GRAPH-008",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-GRAPH-009",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-GRAPH-010",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-GRAPH-011",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-GRAPH-012",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-GRAPH-013",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-GRAPH-014",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-GRAPH-015",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-GTM-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-INTEG-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-INTEG-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-INTEG-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-INTEG-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-INTERACT-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-INTERACT-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-INTERACT-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-KG-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-LIC-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-LIC-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-LLM-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-MC-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-MC-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-MC-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-MC-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-MC-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-MILESTONE-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-MKT-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-MODEL-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-MODEL-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-MODEL-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-MODEL-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-MODEL-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-MODEL-006",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-MODEL-007",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-MODEL-008",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-MODEL-009",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-MODEL-010",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-MODEL-011",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-MONETIZE-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-MONETIZE-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-MONETIZE-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-MONETIZE-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-NARRATIVE-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-NARRATIVE-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-NARRATIVE-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-NET-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-NET-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-NET-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-NET-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-NET-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-NET-006",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-NET-007",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-NET-008",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-NET-009",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-NET-010",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-NET-011",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-NET-012",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-NET-013",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-NORM-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-NORM-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-OBS-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-OBS-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-OBS-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-OBS-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-OBS-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-OBS-006",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-OBS-007",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-OBS-008",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-OBS-009",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-OBS-010",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-OBS-011",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-OBS-012",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-OBS-013",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-OEM-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ONT-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-OPT-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-OPT-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-OPT-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-OPT-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-OPT-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-OPT-006",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-OPT-007",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ORCH-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ORCH-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ORCH-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ORCH-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ORCH-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ORCH-006",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PATTERN-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PATTERN-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PATTERN-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PATTERN-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PERSONA-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PERSONA-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PERSONA-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PERSONA-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PERSONA-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PERSONA-006",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PERSONA-007",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PERSONA-008",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PHI-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PHI-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PHI-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PHI-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PHI-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PHI-006",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PHI-007",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PHI-008",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PHI-009",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PHI-010",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PHI-011",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PHI-012",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PHI-013",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PHI-014",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PHI-015",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PHI-016",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PHI-017",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PHI-018",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PHI-019",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PHI-020",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PHI-021",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PHI-022",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PHI-023",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PHI-024",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PHI-025",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PLATFORM-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PLATFORM-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PLATFORM-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PLATFORM-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PLUGIN-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PLUGIN-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PLUGIN-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PLUGIN-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PLUGIN-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PLUGIN-006",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PM-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PRICE-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PRICE-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PRIVACY-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PRIVACY-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PRIVACY-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PRIVACY-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PRIVACY-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PRIVACY-006",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PRIVACY-007",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PRIVACY-008",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PRIVACY-009",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PRIVACY-010",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PRIVACY-011",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PRIVACY-012",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PRIVACY-013",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PSYCH-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-PSYCH-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-REASON-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-REASON-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-REASON-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-REASON-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-REASON-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-REASON-006",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-REASON-007",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-REASON-008",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-REC-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-REC-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-REC-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-REC-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-REC-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-REPORT-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-REPORT-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-REPORT-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-REPORT-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-REPORT-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-RESIL-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-RESIL-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-RESIL-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-RESIL-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-RESIL-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-RESIL-006",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-RESIL-007",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-RESIL-008",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-RISK-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-ROADMAP-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-SCALE-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-SCALE-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-SCALE-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-SCALE-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-SCALE-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-SCALE-006",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-SCALE-007",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-SCALE-008",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-SCALE-009",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-SCALE-010",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-SDK-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-SDK-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-SDK-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-SDK-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-SDK-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-SDK-006",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-SDK-007",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-SDK-008",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-SECOPS-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-SIM-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-SIM-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-SIM-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-SIM-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-SIM-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-SIM-006",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-SIMSCALE-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-SIMSCALE-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-SIMSCALE-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-SIMSCALE-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-SIMSCALE-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-SIMSCALE-006",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-SIMSCALE-007",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-SIMSCALE-008",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-SOCIAL-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-SOCIAL-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-SOCIAL-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-STAT-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-STAT-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-STOR-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-STOR-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-STOR-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-STOR-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-STOR-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-STOR-006",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-STOR-007",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-STOR-008",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-STOR-009",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-STOR-010",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-STOR-011",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-STOR-012",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-STOR-013",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-STOR-014",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-STREAM-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-STREAM-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-STREAM-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-STREAM-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-STREAM-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-STREAM-006",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-STUDIO-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-STUDIO-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-STUDIO-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-STUDIO-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-STUDIO-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-STUDIO-006",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-STUDIO-007",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-TEL-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-TELEM-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-TELEM-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-TELEM-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-TELEM-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-TELEM-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-TELEM-006",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-TELEM-007",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-TEST-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-THREAT-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-THREAT-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-VALIDATE-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-VIS-001",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-VIS-002",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-VIS-003",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-VIS-004",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-VIS-005",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-VIS-006",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-VIS-007",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-VIS-008",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-VIS-009",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-VIS-010",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-VIS-011",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-VIS-012",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-VIS-013",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-VIS-014",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-VIS-015",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-VIS-016",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-VIS-017",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-VIS-018",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-VIS-019",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-VIS-020",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-VIS-021",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-VIS-022",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-VIS-023",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-VIS-024",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-VIS-025",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-VIS-026",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-VIS-027",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-VIS-028",
+      "status": "planned",
+      "evidence": []
+    },
+    {
+      "id": "REQ-VIS-029",
+      "status": "planned",
+      "evidence": []
+    }
+  ],
+  "verifiedIncrements": [
+    {
+      "id": "P0-P4-local-vertical-slice",
+      "status": "verified",
+      "evidence": [
+        "server/psyforge-service.test.ts",
+        "server/http-server.test.ts",
+        "server/auth/local-credentials.ts",
+        "server/auth/local-credentials.test.ts",
+        "server/domain/feature-definitions.ts",
+        "server/domain/feature-definitions.test.ts",
+        "server/recompute-features.ts",
+        "server/recompute-features.test.ts",
+        "server/domain/model-registry.ts",
+        "server/domain/model-registry.test.ts",
+        "docs/LOCAL-SERVICE.md",
+        "docs/FEATURE-ENGINE.md",
+        "docs/MODEL-REGISTRY.md",
+        "docs/DRIFT-AND-ROLLBACK.md",
+        "docs/MODEL-CARD-BASELINE-1.0.md",
+        "docs/EVALUATION-CARD-BASELINE-1.0.md"
+      ]
+    },
+    {
+      "id": "P5-evidence-registry-foundation",
+      "status": "verified",
+      "evidence": [
+        "server/evidence/local-source-import.ts",
+        "server/evidence/local-source-import.test.ts",
+        "server/import-evidence.ts",
+        "server/auth/local-credentials.ts",
+        "server/auth/local-credentials.test.ts",
+        "server/persistence/repository.ts",
+        "server/application/psyforge-service.ts",
+        "server/psyforge-service.test.ts",
+        "server/http-server.test.ts",
+        "src/views/EvidenceRegistryView.tsx",
+        "docs/foundations/ADR-008-EVIDENCE-REGISTRY.md",
+        "docs/EVIDENCE-REGISTRY.md",
+        "docs/LOCAL-ACTOR-CREDENTIALS.md"
+      ]
+    },
+    {
+      "id": "P6-synthetic-graph-kernel",
+      "status": "verified",
+      "evidence": [
+        "server/domain/graph.ts",
+        "server/graph-kernel.test.ts",
+        "server/graph/synthetic-graph-fixture.ts",
+        "server/graph/synthetic-graph-fixture.test.ts",
+        "server/graph/fixture-cli.ts",
+        "server/application/psyforge-service.ts",
+        "server/persistence/repository.ts",
+        "server/transport/http-server.ts",
+        "server/http-server.test.ts",
+        "src/hooks/useGraphInspector.ts",
+        "src/views/KnowledgeGraphView.tsx",
+        "src/views/KnowledgeGraphView.test.tsx",
+        "docs/foundations/ADR-009-SYNTHETIC-GRAPH-KERNEL.md",
+        "docs/NEXT-PHASE-PLAN.md"
+      ]
+    }
+  ]
+}

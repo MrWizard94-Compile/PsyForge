@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ClipboardCheck, Download, LogOut, ShieldCheck } from 'lucide-react';
-import { type LocalActor, type LocalRole, type ReviewDecision, useLocalReview } from '../hooks/useLocalReview';
+import { type LocalRole, type ReviewDecision, useLocalReview } from '../hooks/useLocalReview';
 
 const REVIEW_DECISIONS: Array<{ decision: ReviewDecision; label: string; permittedRole: LocalRole }> = [
   { decision: 'approved', label: 'Approve review', permittedRole: 'reviewer' },
@@ -12,15 +12,12 @@ const REVIEW_DECISIONS: Array<{ decision: ReviewDecision; label: string; permitt
 export default function LocalReviewView() {
   const local = useLocalReview();
   const [token, setToken] = useState('');
-  const [actorId, setActorId] = useState('local-reviewer');
-  const [tenantId, setTenantId] = useState('studio-alpha');
-  const [role, setRole] = useState<LocalRole>('reviewer');
   const [recommendationId, setRecommendationId] = useState('');
   const [rationale, setRationale] = useState('');
 
   const submitConnection = async (event: React.FormEvent) => {
     event.preventDefault();
-    const connected = await local.connect(token, { id: actorId, tenantId, role } satisfies LocalActor);
+    const connected = await local.connect(token);
     if (connected !== undefined) {
       setToken('');
     }
@@ -49,13 +46,8 @@ export default function LocalReviewView() {
 
       {local.actor === undefined ? (
         <form onSubmit={submitConnection} className="grid gap-4 bg-white/5 border border-white/10 rounded-2xl p-6">
-          <div className="rounded-xl border border-amber-400/30 bg-amber-400/10 px-4 py-3 text-sm text-amber-100">Run <code>npm run start:server</code>, then paste the runtime token from <code>data/.psyforge-local-token</code>. The token is used once to create an HttpOnly local session and is never stored by this page.</div>
-          <label className="grid gap-1 text-sm"><span className="text-white/60">Local token</span><input aria-label="Local token" value={token} onChange={(event) => setToken(event.target.value)} type="password" autoComplete="off" className="rounded-lg bg-black/30 border border-white/10 p-3" required /></label>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <label className="grid gap-1 text-sm"><span className="text-white/60">Actor ID</span><input aria-label="Actor ID" value={actorId} onChange={(event) => setActorId(event.target.value)} className="rounded-lg bg-black/30 border border-white/10 p-3" required /></label>
-            <label className="grid gap-1 text-sm"><span className="text-white/60">Tenant ID</span><input aria-label="Tenant ID" value={tenantId} onChange={(event) => setTenantId(event.target.value)} className="rounded-lg bg-black/30 border border-white/10 p-3" required /></label>
-            <label className="grid gap-1 text-sm"><span className="text-white/60">Role</span><select aria-label="Role" value={role} onChange={(event) => setRole(event.target.value as LocalRole)} className="rounded-lg bg-black/30 border border-white/10 p-3"><option value="operator">Operator</option><option value="reviewer">Reviewer</option><option value="ethics_reviewer">Ethics reviewer</option><option value="ingestor">Ingestor</option></select></label>
-          </div>
+          <div className="rounded-xl border border-amber-400/30 bg-amber-400/10 px-4 py-3 text-sm text-amber-100">Run <code>npm run start:server</code>, then paste the token for the intended actor from <code>data/.psyforge-local-actors.json</code>. The service binds the actor, tenant, and role to that token; this page cannot choose or elevate a role.</div>
+          <label className="grid gap-1 text-sm"><span className="text-white/60">Actor token</span><input aria-label="Local actor token" value={token} onChange={(event) => setToken(event.target.value)} type="password" autoComplete="off" className="rounded-lg bg-black/30 border border-white/10 p-3" required /></label>
           <button disabled={local.busy} className="w-fit rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold disabled:opacity-50">Create local session</button>
         </form>
       ) : (
